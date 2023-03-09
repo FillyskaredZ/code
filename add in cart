@@ -1,0 +1,34 @@
+<?php
+$servername = "localhost";
+$dbusername = "root";
+$dbpassword = "";
+$dbname = "carshop";
+
+// Create connection
+$conn = mysqli_connect($servername, $dbusername, $dbpassword,$dbname);
+
+// Check connection
+if (!$conn) {
+  die("Connection failed: " . mysqli_connect_error());
+}
+//echo "Connected successfully";
+?><!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ใส่ข้อมูลรถ</title>
+</head>
+<body>
+    <form action="dashborad.php" method="post" enctype="multipart/form-data">
+        เลขทะเบียน : <input type="text" name="carid"><br>
+        สีรถ : <input type="text" name="color"><br>
+        ยี่ห้อ : <input type="text" name="brand"><br>
+        ราคา : <input type="number" name="price"><br>
+        รูปรถ : <input type="file" name="carpic"><br><br>
+        <input type="submit" value="ใส่ตะกร้า">
+
+    </form>
+</body>
+</html>
